@@ -21,10 +21,10 @@ export const company = {
   address: {
     label: "Head Office",
     street: "P.O.Box 75287, Workshop 5,#W306, Dubai Maritime City,Dubai, UAE.",
-    city: "Colombo 10",
-    region: "Western Province",
+    city: "Dubai",
+    region: "",
     postal: "",
-    country: "Sri Lanka",
+    country: "UAE",
     // Tapping "Show on map" opens this link.
     mapUrl: "https://maps.app.goo.gl/47QfEh2tjNksU1618",
   },
