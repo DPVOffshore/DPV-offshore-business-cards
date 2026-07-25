@@ -5,7 +5,7 @@
 export const company = {
   name: "DPV Offshore & Marine Services (Pvt) Ltd",
   shortName: "DPV Offshore",
-  tagline: "Offshore & Marine Services",
+  tagline: "DPV Offshore & Marine Services",
   website: "https://www.dpvoffshore.com",
 
   logoFull: "/logo-full.png", // logo with text (in /public)
@@ -20,7 +20,7 @@ export const company = {
   // Edit with your real address.
   address: {
     label: "Head Office",
-    street: "No. 59/2, Norris Canal Road",
+    street: "P.O.Box 75287, Workshop 5,#W306, Dubai Maritime City,Dubai, UAE.",
     city: "Colombo 10",
     region: "Western Province",
     postal: "",
