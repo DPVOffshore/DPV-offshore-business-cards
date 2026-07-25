@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { employees } from "@/data/employees";
 import { company } from "@/data/company";
+import { withBasePath } from "@/lib/basePath";
 
 // A small directory index at "/". Handy for testing; you can
 // keep it private or replace it with a redirect if you prefer.
@@ -15,7 +16,7 @@ export default function Home() {
         fontFamily: "var(--font-body)",
       }}
     >
-      <Image src={company.logoFull} alt={company.name} width={260} height={80} style={{ height: "auto", width: 220 }} />
+      <Image src={withBasePath(company.logoFull)} alt={company.name} width={260} height={80} style={{ height: "auto", width: 220 }} />
       <h1 style={{ fontFamily: "var(--font-display)", color: "var(--navy)", margin: "24px 0 4px", fontSize: 24 }}>
         Digital Business Cards
       </h1>
@@ -37,7 +38,7 @@ export default function Home() {
             }}
           >
             <Image
-              src={e.photo}
+              src={withBasePath(e.photo)}
               alt=""
               width={44}
               height={44}

@@ -3,6 +3,7 @@
 import Image from "next/image";
 import styles from "./EmployeeCard.module.css";
 import { downloadVCard } from "@/lib/vcard";
+import { withBasePath } from "@/lib/basePath";
 import {
   telHref,
   waHref,
@@ -26,7 +27,7 @@ export default function EmployeeCard({ emp, company }) {
         <div className={styles.hero}>
           <Image
             className={styles.logo}
-            src={company.logoFull}
+            src={withBasePath(company.logoFull)}
             alt={company.name}
             width={220}
             height={68}
@@ -34,7 +35,7 @@ export default function EmployeeCard({ emp, company }) {
           />
           <Image
             className={styles.avatar}
-            src={emp.photo}
+            src={withBasePath(emp.photo)}
             alt={`${emp.firstName} ${emp.lastName}`}
             width={108}
             height={108}
