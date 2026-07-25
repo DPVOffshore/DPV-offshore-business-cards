@@ -30,6 +30,5 @@ export const company = {
   },
 
   // Where the company operates (shown as chips at the bottom).
-  countries: ["Singapore", "Sri Lanka", "UAE"],
-  uaeBranches: ["Abu Dhabi", "Dubai", "Sharjah", "Khorfakkan", "Fujairah"],
+  countries: ["Dubai", "Abu Dhabi", "Fujairah", "Sri Lanka", "Singapore"],
 };

@@ -24,13 +24,13 @@ export const employees = [
   {
     slug: "jayantha",
     prefix: "Mr.", // optional honorific, saved into the contact
-    firstName: "Jayantha",
-    lastName: "Bandara",
+    firstName: "Bhabani",
+    lastName: "Sankar",
     title: "Chief Executive Officer (CEO)",
     photo: "/employees/jayantha.jpg",
-    phone: "+94 77 738 4934", // mobile (spaces are fine; the dialer strips them)
+    phone: "+971 50 273 3471", // mobile (spaces are fine; the dialer strips them)
     officePhone: "+971 4 580 4314", // optional second number (UAE office)
-    whatsapp: "94777384934", // no plus, no spaces
+    whatsapp: "971502733471", // no plus, no spaces
     email: "ceo@dpvoffshore.com",
     website: "https://www.dpvoffshore.com",
     // address: {              // <-- optional override, otherwise company address is used
