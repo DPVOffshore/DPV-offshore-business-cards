@@ -26,7 +26,7 @@ export const company = {
     postal: "",
     country: "UAE",
     // Tapping "Show on map" opens this link.
-    mapUrl: "https://maps.app.goo.gl/47QfEh2tjNksU1618",
+    mapUrl: "https://maps.app.goo.gl/EcgtVJ7iuwgAT6sk9",
   },
 
   // Where the company operates (shown as chips at the bottom).
