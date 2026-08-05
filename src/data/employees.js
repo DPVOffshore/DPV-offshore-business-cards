@@ -22,7 +22,7 @@
 
 export const employees = [
   {
-    slug: "jayantha",
+    slug: "Bhabani",
     prefix: "Mr.", // optional honorific, saved into the contact
     firstName: "Bhabani",
     lastName: "Nayak",
