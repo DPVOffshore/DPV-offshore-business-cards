@@ -50,3 +50,15 @@ export function addressLine(address) {
     .filter(Boolean)
     .join(", ");
 }
+
+// Every address to show on a card, in order.
+// An employee can override the company offices with their own
+// "addresses" array (or a single "address").
+export function resolveAddresses(emp, company) {
+  const list =
+    emp?.addresses ||
+    (emp?.address ? [emp.address] : null) ||
+    company?.addresses ||
+    (company?.address ? [company.address] : []);
+  return list.filter(Boolean);
+}

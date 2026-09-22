@@ -1,10 +1,10 @@
-import { webHref, addressLine } from "./links";
+import { webHref, addressLine, resolveAddresses } from "./links";
 
 // Builds a vCard 3.0 string. When downloaded as a .vcf file,
 // the phone offers "Add to contacts" with all fields filled in.
 export function buildVCard(emp, company) {
   const website = webHref(emp.website || company.website);
-  const address = emp.address || company.address;
+  const addresses = resolveAddresses(emp, company);
 
   const tel = (n) => (n || "").replace(/\s+/g, "");
 
@@ -15,8 +15,11 @@ export function buildVCard(emp, company) {
     `FN:${[emp.prefix, emp.firstName, emp.lastName].filter(Boolean).join(" ")}`,
     `ORG:${company.name}`,
     `TITLE:${emp.title}`,
-    `TEL;TYPE=CELL,VOICE:${tel(emp.phone)}`,
   ];
+
+  if (emp.phone) {
+    lines.push(`TEL;TYPE=CELL,VOICE:${tel(emp.phone)}`);
+  }
 
   if (emp.officePhone) {
     lines.push(`TEL;TYPE=WORK,VOICE:${tel(emp.officePhone)}`);
@@ -25,13 +28,14 @@ export function buildVCard(emp, company) {
   lines.push(`EMAIL;TYPE=INTERNET,WORK:${emp.email}`);
   lines.push(`URL:${website}`);
 
-  if (address) {
+  // One ADR/LABEL pair per office, so both are saved into the contact.
+  addresses.forEach((address) => {
     // ADR fields: ;;street;city;region;postal;country
     lines.push(
       `ADR;TYPE=WORK:;;${address.street || ""};${address.city || ""};${address.region || ""};${address.postal || ""};${address.country || ""}`
     );
     lines.push(`LABEL;TYPE=WORK:${addressLine(address)}`);
-  }
+  });
 
   lines.push("END:VCARD");
   return lines.join("\r\n");

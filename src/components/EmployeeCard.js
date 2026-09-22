@@ -12,10 +12,11 @@ import {
   webLabel,
   mapHref,
   addressLine,
+  resolveAddresses,
 } from "@/lib/links";
 
 export default function EmployeeCard({ emp, company }) {
-  const address = emp.address || company.address;
+  const addresses = resolveAddresses(emp, company);
   const website = emp.website || company.website;
 
   const waText = `Hi ${emp.firstName}, I got your contact from your DPV Offshore card.`;
@@ -54,18 +55,20 @@ export default function EmployeeCard({ emp, company }) {
 
         {/* Contact rows */}
         <div className={styles.contacts}>
-          {/* Phone -> dialer on mobile */}
-          <a className={styles.row} href={telHref(emp.phone)}>
-            <span className={styles.ic}>
-              <svg viewBox="0 0 24 24">
-                <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.4-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2Z" />
-              </svg>
-            </span>
-            <span className={styles.txt}>
-              <small>Mobile</small>
-              <span>{emp.phone}</span>
-            </span>
-          </a>
+          {/* Phone -> dialer on mobile (optional) */}
+          {emp.phone && (
+            <a className={styles.row} href={telHref(emp.phone)}>
+              <span className={styles.ic}>
+                <svg viewBox="0 0 24 24">
+                  <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.4-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2Z" />
+                </svg>
+              </span>
+              <span className={styles.txt}>
+                <small>Mobile</small>
+                <span>{emp.phone}</span>
+              </span>
+            </a>
+          )}
 
           {/* Office phone (optional second number) */}
           {emp.officePhone && (
@@ -126,9 +129,15 @@ export default function EmployeeCard({ emp, company }) {
             </span>
           </a>
 
-          {/* Address -> opens maps */}
-          {address && (
-            <a className={styles.row} href={mapHref(address)} target="_blank" rel="noopener noreferrer">
+          {/* Addresses -> each one opens maps */}
+          {addresses.map((address) => (
+            <a
+              key={address.label || addressLine(address)}
+              className={styles.row}
+              href={mapHref(address)}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <span className={styles.ic}>
                 <svg viewBox="0 0 24 24">
                   <path d="M12 21s7-6.3 7-11a7 7 0 1 0-14 0c0 4.7 7 11 7 11Z" />
@@ -146,7 +155,7 @@ export default function EmployeeCard({ emp, company }) {
                 </span>
               </span>
             </a>
-          )}
+          ))}
         </div>
 
         {/* Save Contact */}

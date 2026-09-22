@@ -16,8 +16,10 @@
 //    - whatsapp: NO plus sign, NO spaces          ->  "94777384934"
 //    - email/website: optional; if website is left out, the
 //      company website is used automatically.
-//    - address: optional. Leave it out to use the company
-//      head-office address. Add one here only to override it.
+//    - phone:    OPTIONAL. Remove it if the person has no mobile.
+//    - address / addresses: optional. Leave them out to use the
+//      company offices (Dubai + Abu Dhabi). Add "addresses: [...]"
+//      here only to override them for one person.
 // ============================================================
 
 export const employees = [
@@ -42,6 +44,20 @@ export const employees = [
     //   country: "UAE",
     //   mapUrl: "",
     // },
+  },
+
+  {
+    slug: "prathvi",
+    prefix: "Mr.", // optional honorific, saved into the contact
+    firstName: "Prathvi",
+    lastName: "D Ullal",
+    title: "Assistant Technical Superintendent",
+    photo: "/employees/prathvi.jpg",
+    // phone: "",                  // no mobile number yet — add it here when available
+    officePhone: "+971 4 580 4314", // UAE office
+    // whatsapp: "",               // add once a mobile number exists
+    email: "operations@dpvoffshore.com",
+    website: "https://www.dpvoffshore.com",
   },
 
   // ---- copy from here to add a new employee ----
