@@ -27,7 +27,7 @@ const abuDhabiOffice = {
 };
 
 export const company = {
-  name: "DPV Offshore & Marine Services (Pvt) Ltd",
+  name: "DPV Offshore & Marine Services L.L.C",
   shortName: "DPV Offshore",
   tagline: "DPV Offshore & Marine Services",
   website: "https://www.dpvoffshore.com",
