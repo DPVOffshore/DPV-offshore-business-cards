@@ -56,7 +56,7 @@ export const employees = [
     phone: "+971 50 273 3471", // mobile (spaces are fine; the dialer strips them)
     officePhone: "+971 4 580 4314", // UAE office
     whatsapp: "971502733471", // no plus, no spaces
-    email: "operations@dpvoffshore.com",
+    email: "projects@dpvoffshore.com",
     website: "https://www.dpvoffshore.com",
   },
 
