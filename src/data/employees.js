@@ -53,9 +53,9 @@ export const employees = [
     lastName: "D Ullal",
     title: "Assistant Technical Superintendent",
     photo: "/employees/prathvi.jpg",
-    // phone: "",                  // no mobile number yet — add it here when available
+    phone: "+971 50 273 3471", // mobile (spaces are fine; the dialer strips them)
     officePhone: "+971 4 580 4314", // UAE office
-    // whatsapp: "",               // add once a mobile number exists
+    whatsapp: "971502733471", // no plus, no spaces
     email: "operations@dpvoffshore.com",
     website: "https://www.dpvoffshore.com",
   },
