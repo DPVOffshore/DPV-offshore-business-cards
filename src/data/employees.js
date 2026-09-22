@@ -24,10 +24,10 @@
 
 export const employees = [
   {
-    slug: "jayantha",
+    slug: "Bhabani",
     prefix: "Mr.", // optional honorific, saved into the contact
     firstName: "Bhabani",
-    lastName: "Sankar",
+    lastName: "Nayak",
     title: "Chief Executive Officer (CEO)",
     photo: "/employees/jayantha.jpg",
     phone: "+971 50 273 3471", // mobile (spaces are fine; the dialer strips them)
