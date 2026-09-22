@@ -47,5 +47,5 @@ export const company = {
   address: dubaiOffice,
 
   // Where the company operates (shown as chips at the bottom).
-  countries: ["Dubai", "Abu Dhabi", "Fujairah", "Sri Lanka", "Singapore"],
+  countries: ["Dubai", "Abu Dhabi", "Sharjah", "Fujairah", "Sri Lanka", "Singapore"],
 };
